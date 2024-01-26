@@ -13,18 +13,18 @@ and open the template in the editor.
         var vides = 7
         function comprova() {
 
-        if ((document.getElementById("valor").value >= "a") && (document.getElementById("valor").value <= "m,"))
-            
+
+        if ((document.getElementById("valor").value >= "a") && (document.getElementById("valor").value <= "m"))
+        {              alert("Has encertat!"); 
+ 
+            lletres=document.getElementById("lletres").value;
             if (lletres == ""){
             lletres = lletres + document.getElementById("valor").value
           }
             else{
             lletres = lletres + "," + document.getElementById("valor").value
           } 
-            +
-        {
-            alert("Has encertat!"); 
-            document.getElementById("lletres").innerHTML = document.getElementById("valor").value
+            
         }
         else 
         {   
@@ -32,8 +32,7 @@ and open the template in the editor.
          vides = vides - 1
             document.getElementById("vida").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + vides;
         }
-           
-    }
+    }    
         </script>
     </head>
     <body>
