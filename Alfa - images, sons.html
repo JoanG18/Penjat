@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+        
+  <html>
+    <head>
+        <title>Prototip Joc Penjat</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Alfa .css">
+        <script src="Img-Aud.js"></script>
+    
+    </head>
+    
+        <body onload="amaga();" style="background-image: url('img/Jungle.png');
+              background-size: 640px 480px; background-repeat: no-repeat">
+
+            <h1 style="color: #FFFFFF">PROTOTIP JOC PENJAT</h1>
+       
+            <input type="text" placeholder="Escriu en minuscules" id="valor">
+
+            <button onclick="comprova();" id="boto">comprova</button>
+         
+            <h2 style="color: #C7C1D4">Paraula</h2>
+        
+            <p id="lletres" style="color: #FFFFFF"></p>
+        
+            <h2 style="color: #C7C1D4">Vides</h2>
+        
+            <p id="vida" style="color: #FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7</p>
+        
+            <h2 style="color: #C7C1D4">Lletres</h2>
+        
+            <p id="dolentes" style="color: #FFFFFF"></p>
+            
+            <h4 style="color: #CCCCCC">Crèdits: Joc del Penjat on Schratch</h4>
+            
+            
+    <div id="audios">
+                
+         <audio id="mistery"><source src="AUD/mystery.mp3" type="audio/mpeg"></audio>
+         <audio id="cheer"><source src="AUD/cheer.mp3" type="audio/mpeg"></audio>
+         <audio id="clock_ticking"><source src="AUD/clock_ticking.mp3" type="audio/mpeg"></audio>
+         <audio id="miau"><source src="AUD/miau.mp3" type="audio/mpeg"></audio>
+         <audio id="cat_fight"><source src="AUD/cat-fight.mp3" type="audio/mpeg"></audio>
+         <audio id="boom_cloud"> <source src="AUD/boom_cloud.mp3" type="audio/mpeg"> </audio>
+         <audio id="bell_tollx3"><source src="AUD/bell_toll_x3.mp3" type="audio/mpeg"> </audio>
+         <audio id="bell_toll"> <source src="AUD/bell_toll.mp3" type="audio/mpeg"></audio>
+                
+    </div>
+                       
+    <div id="Imatges"> 
+
+         <img src="img/ahorcado_6.png" id="ahorcado_6" style="width:280px;heitht:270px;" title="Et queden 6 vides!"> 
+         <img src="img/ahorcado_5.png" id="ahorcado_5" style="width:280px;heitht:270px;" title="Et queden 5 vides!"> 
+         <img src="img/ahorcado_4.png" id="ahorcado_4" style="width:280px;heitht:270px;" title="Et queden 4 vides!"> 
+         <img src="img/ahorcado_3.png" id="ahorcado_3" style="width:280px;heitht:270px;" title="Et queden 3 vides!"> 
+         <img src="img/ahorcado_2.png" id="ahorcado_2" style="width:280px;heitht:270px;" title="Et queden 2 vides!"> 
+         <img src="img/ahorcado_1.png" id="ahorcado_1" style="width:280px;heitht:270px;" title="Et queda 1 vida!"> 
+         <img src="img/ahorcado_0.png" id="ahorcado_0" style="width:280px;heitht:270px;" title="En pau descansi">       
+            
+    </div>    
+        </body>
+</html>  

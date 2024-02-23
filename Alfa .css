@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16-feb-2024, 9:15:33
+    Author     : tecno1
+*/
+html{
+    background: #222;
+    margin: 0;
+    width: 640px;
+    height: 480px;
+}
+
+
+body{
+    background: linear-gradient(#aaa 0, #ddd 10px, #fff 55px);
+    border: 1px solid purple;
+    padding: 10px 20px;
+    box-shadow: 5px 0px 30px #000;
+    border-radius: 8px;
+    margin: 0;
+    width: 640px;
+    height: 480px;
+}
+
+
+h2{
+    color: white;
+}
+
+#Idioma { position:relative; top:-386px; left:318px; }
+#Sons { position:relative; top:-380px; left:558px; }
+#Pista { position:relative; top:-350px; left:130px; }
+#Segons { position:relative; top:-285px; left:130px; }
+#Punts { position:relative; top:-200px; left:90px; }
+#Guia { position:relative; top:-305px; left:260px; }
+#Caminar { position:relative; top:-440px; left:430px; }
+#Rotar { position:relative; top:-400px; left:430px; }
+#Teclat { position:relative; top:-360px; left:293px; }
+#Audios { position:relative; top:-480px; left:0px; }
+#Imatges { position:relative; top:-250px; left:300px; }
