@@ -38,6 +38,7 @@
         {      
             alert("Has encertat!"); 
             document.getElementById('miau').play();
+            document.getElementById('clock_ticking').play();
             
             lletres = document.getElementById("lletres").innerHTML;
             
@@ -58,6 +59,7 @@
              
             alert("Has fallat!");
             document.getElementById('boom_cloud').play();
+            document.getElementById('clock_ticking').play();
            
             vides = vides - 1;
             MostraImg()
