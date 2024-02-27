@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Prototip Joc Penjat</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var vides = 7;
+        var correctes = "";
+        function comprova() {
+            
+            lletra = document.getElementById("valor").value
+    
+        //Convertir majusc. en minusc. (lletra = lletra.toLowerCase();)
+            lletra = lletra.toLowerCase();
+            
+            switch (lletra) {
+                
+            case "á":
+            case "à":
+                lletra = "a";
+                break;
+            case "è":
+            case "é":
+                lletra = "e";
+                break;
+            case "í":
+            case "ì":
+                lletra = "i";
+                break;
+            case "ú":
+            case "ù":
+            case "ü":
+                lletra = "u";
+                break;
+            }
+            
+        if ((lletra >= "a") && (lletra <= "m") || (lletra == "ç"))
+        {      
+            alert("Has encertat!"); 
+                
+            lletres = document.getElementById("lletres").innerHTML;
+            
+            if (lletres == ""){
+                lletres = lletres + document.getElementById("valor").value;    
+            }
+            else{
+                lletres = lletres + ", " + document.getElementById("valor").value;
+            }
+            document.getElementById("lletres").innerHTML = lletres;
+
+        } 
+       
+        
+        else{
+            
+            dolentes = document.getElementById("dolentes").innerHTML;
+             
+            alert("Has fallat!");
+            vides = vides - 1;
+
+            if (dolentes == ""){
+                dolentes = dolentes + document.getElementById("valor").value;    
+            }
+            else{
+                dolentes = dolentes + ", " + document.getElementById("valor").value;
+            }
+            document.getElementById("dolentes").innerHTML = dolentes;
+
+            document.getElementById("vida").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + vides;
+        }
+    }    
+    </script>
+    </head>
+        <body>
+         <body style="background-color:#C7C1D4">
+             
+        <b><h1>PROTOTIP JOC PENJAT</h1></b>
+        
+        <input type="text" placeholder="Escriu en minuscules" id="valor">
+         <button onclick="comprova();">comprova</button>
+         
+        <h2>Paraula</h2>
+        
+        <p id="lletres"></p>
+        
+        <h2>Vides</h2>
+        
+        <p id="vida">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7</p>
+        
+        <h2>Lletres</h2>
+        
+        <p id="dolentes"></p>
+        
+        </body>
+</html>
