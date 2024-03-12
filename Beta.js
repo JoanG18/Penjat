@@ -4,28 +4,39 @@
  * and open the template in the editor.
  */
 
-var Paraula = [];
-var lletres = ["_","_","_","_","_","_","_"];
-var Vides = 7;
+var lletres = [];
+var dolentes = ["_","_","_","_","_","_","_"];
+var vides = 7;
 
+        //...
+        
 //Lista de palabras para el juego
 
-var Paraules = ["cordes","fetge","forca","jutges","jutjat","mengen","penjat","quinta","forca"];
+var paraules = ["cordes","fetge","forca","jutges","jutjat","mengen","penjat","quinta","forca"];
 
-var Pistes = ["A la quinta forca","A ca un penjat, no hi anomenis cordes",
+var pistes = ["A la quinta forca","A ca un penjat, no hi anomenis cordes",
     "Setze jutges d'un penjat mengen fetge d'un penjat"];
 
-var Paraulespistes = [1, 2, 0, 2, 2, 2, 1, 0, 2];
+var paraulespistes = [1, 2, 0, 2, 2, 2, 1, 0, 2];
 
+        //...
+        
+//Escull paraula aleatoria
 
+var aleatori = Math.floor(Math.random() * paraules.length);
+var paraula = paraules [aleatori];
+var pista = pistes [paraulespistes [aleatori]];
+
+        //...
+        
 //Marcar cada letra con un "_"
 
-for (var i = 0; i < paraula.leigth; i++) {Paraula[i] = "_"}
+for (var i = 0; i < paraula.leigth; i++) {lletres[i] = "_"}
 
         
         function comprova() {
             
-            lletra = document.getElementById("valor").value
+            lletra = document.getElementById("valor").value;
     
         //Convertir majusc. en minusc. (lletra = lletra.toLowerCase();)
             lletra = lletra.toLowerCase();
@@ -79,9 +90,10 @@ for (var i = 0; i < paraula.leigth; i++) {Paraula[i] = "_"}
             document.getElementById('clock_ticking').play();
            
             vides = vides - 1;
-            MostraImg()
+            MostraImg();
             
-            if (dolentes == ""){
+            /*
+                if (dolentes == ""){
                 dolentes = dolentes + document.getElementById("valor").value;  
                 
             } else{
@@ -91,6 +103,8 @@ for (var i = 0; i < paraula.leigth; i++) {Paraula[i] = "_"}
 
             document.getElementById("vida").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + vides;
         }
+                 
+            */
         
         //comprovar les vides per guanyar o perdre
         if (vides <=0) {
@@ -106,13 +120,14 @@ for (var i = 0; i < paraula.leigth; i++) {Paraula[i] = "_"}
             }
         }  
     }
+        }
     
     function AturaTot(){
             document.getElementById("valor").disabled = true;
             document.getElementById("boto").disabled = true;
         }
         
-    function MostraImg() {
+    function MostraImg(){
               
         switch (vides) {
          
@@ -163,7 +178,7 @@ for (var i = 0; i < paraula.leigth; i++) {Paraula[i] = "_"}
      }
                 
     function amaga(){
-                    
+        
         document.getElementById("ahorcado_0").hidden = true;
         document.getElementById("ahorcado_1").hidden = true;
         document.getElementById("ahorcado_2").hidden = true;
@@ -173,9 +188,3 @@ for (var i = 0; i < paraula.leigth; i++) {Paraula[i] = "_"}
         document.getElementById("ahorcado_6").hidden = true;
             }
             
-    var seconds=0;
-		function timer(){
-		  seconds=seconds+1;
-		  document.getElementById("counter").innerHTML=seconds;
-		}
-		setInterval(timer,1000);
