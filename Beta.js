@@ -187,4 +187,10 @@ for (var i = 0; i < paraula.leigth; i++) {lletres[i] = "_"}
         document.getElementById("ahorcado_5").hidden = true;
         document.getElementById("ahorcado_6").hidden = true;
             }
-            
+   
+    var seconds=0;
+		function timer(){
+		  seconds=seconds+1;
+		  document.getElementById("counter").innerHTML=seconds;
+		}
+		setInterval(timer,1000);
