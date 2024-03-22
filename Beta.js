@@ -1,8 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 var lletres = [];
 var dolentes = ["_","_","_","_","_","_","_"];
@@ -24,14 +19,14 @@ var paraulespistes = [1, 2, 0, 2, 2, 2, 1, 0, 2];
 //Escull paraula aleatoria
 
 var aleatori = Math.floor(Math.random() * paraules.length);
-var paraula = paraules [aleatori];
-var pista = pistes [paraulespistes [aleatori]];
+var paraula = paraules[aleatori];
+var pista = pistes[paraulespistes[aleatori]];
 
         //...
         
 //Marcar cada letra con un "_"
 
-for (var i = 0; i < paraula.leigth; i++) {lletres[i] = "_"}
+for (var i = 0; i < paraula.length; i++) {lletres[i] = "_"}
 
         
         function comprova() {
@@ -61,66 +56,63 @@ for (var i = 0; i < paraula.leigth; i++) {lletres[i] = "_"}
                 lletra = "u";
                 break;
             }
+          
+        var pos = paraula.indexOf(lletra);
+        if ((pos != -1) && (lletra !="")) {
+            // document.getElementById('miau').play();    
             
-        if ((lletra >= "a") && (lletra <= "m") || (lletra == "ç"))
-        {      
             alert("Has encertat!"); 
-            document.getElementById('miau').play();
-            document.getElementById('clock_ticking').play();
             
-            lletres = document.getElementById("lletres").innerHTML;
-            
-            if (lletres == ""){
-                lletres = lletres + document.getElementById("valor").value;    
-            }
-            else{
-                lletres = lletres + ", " + document.getElementById("valor").value;
-            }
-            document.getElementById("lletres").innerHTML = lletres;
-
-        } 
+            for (var i = pos; i < paraula.length; i++){
+                if (paraula[i] == lletra){
+                    lletres[i] = lletra;
+                }
+              }
+              document.getElementById("lletres").innerHTML = lletres;
+            } 
+        else if ((lletra >= a) && (lletra <= z) ||
+                (lletra == "ñ") || (lletra =="-") ||
+                (lletra == "ç") || (lletra =="'"))
+                 alert("Has fallat!");
+                 document.getElementById('boom_cloud').play();
+                 lletres[7-vides] = lletra;
+                 document.getElementById("dolentes").innerHTML = dolentes;
+                     
+                    //Decrementam el comptador Vides
+                    // vides = vides - 1;
+                    Vides--;
        
-
-        else if((lletra >= "n") && (lletra <= "z") || (lletra == "ñ")){
-            
-            dolentes = document.getElementById("dolentes").innerHTML;
-             
-            alert("Has fallat!");
-            document.getElementById('boom_cloud').play();
-            document.getElementById('clock_ticking').play();
-           
-            vides = vides - 1;
-            MostraImg();
-            
-            /*
-                if (dolentes == ""){
-                dolentes = dolentes + document.getElementById("valor").value;  
+                    MostraImg();
+                 else{
                 
-            } else{
-                dolentes = dolentes + ", " + document.getElementById("valor").value;
             }
-            document.getElementById("dolentes").innerHTML = dolentes;
-
-            document.getElementById("vida").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + vides;
-        }
-                 
-            */
-        
-        //comprovar les vides per guanyar o perdre
+            
+            
+//comprovar les vides per guanyar o perdre
         if (vides <=0) {
             window.alert("I has perdut!");
-            document.getElementById('cat_fight').play();
-            AturaTot();
             
+            if (document.getElementById('off').hidden) {  
+          }
+          AturaTot();
+          
         } else {
-            if (lletres.length >=14) {
-                window.alert("I has guanyat!");
-                document.getElementById('cheer').play();
-                AturaTot();
+            if (paraula.indexOf('_') == -1) {
+                AmagaImg();
+                
+                //calcular puntuació
+                
+                
             }
-        }  
-    }
+                window.alert("I has guanyat!");
+            if (document.getElementById('off').hidden) { 
+            }
+          AturaTot();
+        }  else{
+            if (document.getElementById('off').hidden) { 
         }
+    
+        
     
     function AturaTot(){
             document.getElementById("valor").disabled = true;
@@ -186,7 +178,7 @@ for (var i = 0; i < paraula.leigth; i++) {lletres[i] = "_"}
         document.getElementById("ahorcado_4").hidden = true;
         document.getElementById("ahorcado_5").hidden = true;
         document.getElementById("ahorcado_6").hidden = true;
-            }
+     }
    
     var seconds=0;
 		function timer(){
