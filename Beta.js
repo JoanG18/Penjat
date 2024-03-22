@@ -26,14 +26,15 @@ var pista = pistes[paraulespistes[aleatori]];
         
 //Marcar cada letra con un "_"
 
-for (var i = 0; i < paraula.length; i++) {lletres[i] = "_"}
+for (var i = 0; i < paraules.length; i++) {
+    lletres[i] = "_";}
 
         
         function comprova() {
             
             lletra = document.getElementById("valor").value;
     
-        //Convertir majusc. en minusc. (lletra = lletra.toLowerCase();)
+            //Convertir majusc. en minusc. (lletra = lletra.toLowerCase();)
             lletra = lletra.toLowerCase();
             
             switch (lletra) {
@@ -63,38 +64,39 @@ for (var i = 0; i < paraula.length; i++) {lletres[i] = "_"}
             
             alert("Has encertat!"); 
             
-            for (var i = pos; i < paraula.length; i++){
+            for (var i = pos; i < paraules.length; i++){
                 if (paraula[i] == lletra){
                     lletres[i] = lletra;
                 }
               }
               document.getElementById("lletres").innerHTML = lletres;
             } 
-        else if ((lletra >= a) && (lletra <= z) ||
-                (lletra == "ñ") || (lletra =="-") ||
-                (lletra == "ç") || (lletra =="'"))
+        else if (((lletra >= "a") && (lletra <= "z")) ||
+                (lletra == "ñ") || (lletra == "-") ||
+                (lletra == "ç") || (lletra == ".")) {
                  alert("Has fallat!");
                  document.getElementById('boom_cloud').play();
-                 lletres[7-vides] = lletra;
-                 document.getElementById("dolentes").innerHTML = dolentes;
+                 dolentes[7-vides] = lletra;
+                 document.getElementById("lletra").innerHTML = dolentes;
                      
                     //Decrementam el comptador Vides
                     // vides = vides - 1;
-                    Vides--;
+                    vides--;
        
                     MostraImg();
-                 else{
+                } else{
                 
             }
             
             
-//comprovar les vides per guanyar o perdre
+        //comprovar les vides per guanyar o perdre
         if (vides <=0) {
             window.alert("I has perdut!");
             
-            if (document.getElementById('off').hidden) {  
-          }
-          AturaTot();
+            if (document.getElementById('off').hidden) { 
+                
+            }
+            AturaTot();
           
         } else {
             if (paraula.indexOf('_') == -1) {
@@ -106,11 +108,15 @@ for (var i = 0; i < paraula.length; i++) {lletres[i] = "_"}
             }
                 window.alert("I has guanyat!");
             if (document.getElementById('off').hidden) { 
+                
             }
-          AturaTot();
-        }  else{
+            AturaTot();
+        } else {
             if (document.getElementById('off').hidden) { 
+                
+            }
         }
+    }
     
         
     
@@ -169,7 +175,7 @@ for (var i = 0; i < paraula.length; i++) {lletres[i] = "_"}
         }
      }
                 
-    function amaga(){
+    function AmagaImg(){
         
         document.getElementById("ahorcado_0").hidden = true;
         document.getElementById("ahorcado_1").hidden = true;
@@ -181,8 +187,8 @@ for (var i = 0; i < paraula.length; i++) {lletres[i] = "_"}
      }
    
     var seconds=0;
-		function timer(){
-		  seconds=seconds+1;
-		  document.getElementById("counter").innerHTML=seconds;
-		}
-		setInterval(timer,1000);
+    function timer(){
+      seconds=seconds+1;
+      document.getElementById("counter").innerHTML=seconds;
+    }
+    setInterval(timer,1000);
