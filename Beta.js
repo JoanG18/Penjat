@@ -57,21 +57,29 @@ for (var i = 0; i < paraules.length; i++) {
                 lletra = "u";
                 break;
             }
+            
+        if ((dolentes.indexOf(lletra) != -1) || (lletres.indexOf(lletra) != -1)) {
+            alert("Repetida");
+        } else {
+            
+        /*
+         * Cercam la posició de la lletra a la paraula, si no hi es, obtenim -1
+         */
           
         var pos = paraula.indexOf(lletra);
         if ((pos != -1) && (lletra !="")) {
             // document.getElementById('miau').play();    
-            
+            document.getElementById('miau').play();
             alert("Has encertat!"); 
             
-            for (var i = pos; i < paraules.length; i++){
+            for (var i = pos; i < paraula.length; i++){
                 if (paraula[i] == lletra){
                     lletres[i] = lletra;
                 }
               }
               document.getElementById("lletres").innerHTML = lletres;
             } 
-        else if (((lletra >= "a") && (lletra <= "z")) ||
+        }else if (((lletra >= "a") && (lletra <= "z")) ||
                 (lletra == "ñ") || (lletra == "-") ||
                 (lletra == "ç") || (lletra == ".")) {
                  alert("Has fallat!");
@@ -85,38 +93,50 @@ for (var i = 0; i < paraules.length; i++) {
        
                     MostraImg();
                 } else{
-                
+                 window.alert(Idioma.Incorrecte);
+        
+        document.getElementById("lletra").focus();
+
+        // Actualitzam Vides a la pantalla.
+        document.getElementById("vides").innerHTML = 
+                "&nbsp;&nbsp;&nbsp;\n\
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vides;
             }
             
             
         //comprovar les vides per guanyar o perdre
         if (vides <=0) {
+            document.getElementById('cat_fight').play();
             window.alert("I has perdut!");
             
-            if (document.getElementById('off').hidden) { 
+          //  if (document.getElementById('off').hidden) { 
                 
-            }
+          //  }
             AturaTot();
           
         } else {
-            if (paraula.indexOf('_') == -1) {
+            if (lletres.indexOf('_') == -1) {
                 AmagaImg();
+                document.getElementById("ahorcado").hidden = false;
                 
                 //calcular puntuació
-                
-                
-            }
+                /*Punts = paraula.length * Vides * 10 - document.getElementById("Segons").innerHTML;
+                if (Punts < 0) { Punts = 0; };
+                document.getElementById("Punts").innerHTML = Idioma.Puntuacio + " " + Punts;
+                */
+            
                 window.alert("I has guanyat!");
             if (document.getElementById('off').hidden) { 
-                
+             document.getElementById("cheer").play();   
             }
             AturaTot();
         } else {
             if (document.getElementById('off').hidden) { 
-                
+           document.getElementById("clock_ticking").play();     
             }
         }
     }
+ }
     
         
     
