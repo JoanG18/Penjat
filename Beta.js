@@ -58,13 +58,9 @@ for (var i = 0; i < paraules.length; i++) {
                 break;
             }
             
-        if ((dolentes.indexOf(lletra) != -1) || (lletres.indexOf(lletra) != -1)) {
-            alert("Repetida");
-        } else {
+        
             
-        /*
-         * Cercam la posició de la lletra a la paraula, si no hi es, obtenim -1
-         */
+        
           
         var pos = paraula.indexOf(lletra);
         if ((pos != -1) && (lletra !="")) {
@@ -79,7 +75,7 @@ for (var i = 0; i < paraules.length; i++) {
               }
               document.getElementById("lletres").innerHTML = lletres;
             } 
-        }else if (((lletra >= "a") && (lletra <= "z")) ||
+        else if (((lletra >= "a") && (lletra <= "z")) ||
                 (lletra == "ñ") || (lletra == "-") ||
                 (lletra == "ç") || (lletra == ".")) {
                  alert("Has fallat!");
