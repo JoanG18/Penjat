@@ -1,4 +1,144 @@
 
+const Idiomes = [
+        {
+            "IdIdioma": "ca",
+            "Titol": "Versió amb Estructures de Dades Joc del Penjat",
+            "Versio": "Versió β Joc del Penjat",
+            "Input": "Escriu una lletra minúscula",
+            "Pregunta": "Anam a la quinta forca?",
+            "Comprovar": "Comprovar",
+            "Paraula": "Paraula:",
+            "Sopes": "Demanes sopes?",
+            "Pista": "Pista",
+            "Vides": "Vides:",
+            "Moix": "Un moix en té set?",
+            "Lletres": "Lletres:",
+            "Ets": "Ets de lletres?",
+            "URLpistes": "URLpistes:",
+            "Dita": "Dita",
+            "Dita1": "A la quinta forca, ",
+            "Dita2": "A ca un penjat, no hi anomenis cordes, ",
+            "Dita3": "Setze jutges d'un jutjat mengen fetge d'un penjat, …",
+            "Credits": "Crèdits:",
+            "YouTube": "Joc Penjat on Scratch",
+            "Wikis": "Penjat",
+            "Idioma": "en Català",
+            "Diccionari": "Diccionari",
+            "Teclat": "Mostra o Amaga",
+            "Incorrecte": "Caràcter incorrecte!",
+            "Repetida": "Lletra repetida!",
+            "Encertat": "Has encertat!",
+            "Guanyat": "i has guanyat!",
+            "Fallat": "Has fallat!",
+            "Perdut": "i has perdut!",
+            "Descansi": "En pau descansi – RIP!",
+            "Puntuacio": "Puntuació:"
+        },
+        {
+            "IdIdioma": "es",
+            "Titol": "Versión con Estructuras de Datos Juego del Ahorcado",
+            "Versio": "Versión β Juego del Ahorcado",
+            "Input": "Escribe una letra minúscula",
+            "Pregunta": "Vamos al quinto pino?",
+            "Comprovar": "Comprobar",
+            "Paraula": "Palabra:",
+            "Sopes": "Te rindes?",
+            "Pista": "Pista",
+            "Vides": "Vidas:",
+            "Moix": "Un gato tiene siete?",
+            "Lletres": "Letras:",
+            "Ets": "Eres de letras?",
+            "URLpistes": "URLpistas:",
+            "Dita": "Dicho",
+            "Dita1": "Al quinto pino, ",
+            "Dita2": "En casa de un ahorcado, no hables de cuerdas,",
+            "Dita3": "Dieciséis jueces de un juzgado comen hígado de un ahorcado, …",
+            "Credits": "Crèditos:",
+            "YouTube": "Juego Ahorcado on Scratch",
+            "Wikis": "Ahorcado",
+            "Idioma": "en Español",
+            "Diccionari": "Diccionario",
+            "Teclat": "Muestra o Esconde",
+            "Incorrecte": "Carácter incorrecto!",
+            "Repetida": "Letra repetida!",
+            "Encertat": "Has acertado!",
+            "Guanyat": "y has ganado!",
+            "Fallat": "Has fallado!",
+            "Perdut": "y has perdido!",
+            "Descansi": "En paz descanse - RIP!",
+            "Puntuacio": "Puntuación:"
+        },
+        {
+            "IdIdioma": "en",
+            "Titol": "Hangman Game Data Structures Version",
+            "Versio": "Hangman Game β Version",
+            "Input": "Write a lowercase letter",
+            "Pregunta": "Are we going to the boondocks?",
+            "Comprovar": "Check it",
+            "Paraula": "Word:",
+            "Sopes": "You give up?",
+            "Pista": "Clue",
+            "Vides": "Lives:",
+            "Moix": "A cat has seven?",
+            "Lletres": "Letters:",
+            "Ets": "Are you in liberal arts?",
+            "URLpistes": "URLclues:",
+            "Dita": "Saying",
+            "Dita1": "To the boondocks,",
+            "Dita2": "In a hanged man's home, don't talk about ropes,",
+            "Dita3": "Sixteen judges of a court eat the liver of a hangman, …",
+            "Credits": "Credits:",
+            "YouTube": "Hangman Game on Scratch",
+            "Wikis": "Hangman",
+            "Idioma": "in English",
+            "Diccionari": "Dictionary",
+            "Teclat": "Show or Hide",
+            "Incorrecte": "Wrong character!",
+            "Repetida": "Repeated letter!",
+            "Encertat": "You're right!",
+            "Guanyat": "and you have won!",
+            "Fallat": "You have failed!",
+            "Perdut": "and you have lost!",
+            "Descansi": "Rest in peace - RIP!",
+            "Puntuacio": "Score:"
+        },
+        {
+            "IdIdioma": "fr",
+            "Titol": "Version avec Base de Données Jeu du Pendu",
+            "Versio": "Version γ Jeu du Pendu",
+            "Input": "Ecrire une lettre minuscule",
+            "Pregunta": "Allons-nous aux banlieue?",
+            "Comprovar": "Vérifier",
+            "Paraula": "Mot:",
+            "Sopes": "Tu abandonnes?",
+            "Pista": "Indice",
+            "Vides": "Vies:",
+            "Moix": "Un chat en a sept?",
+            "Lletres": "Lettres:",
+            "Ets": "Êtes-vous dans les lettres?",
+            "URLpistes": "URLindices:",
+            "Dita": "Dit",
+            "Dita1": "Aux banlieue,",
+            "Dita2": "Chez un pendu, ne parle pas de cordes,",
+            "Dita3": "Seize juges d'un tribunal mangent le foie d'un pendu, …",
+            "Credits": "Crédits:",
+            "YouTube": "Jeu Pendu sur Scratch",
+            "Wikis": "Pendu",
+            "Idioma": "en Français",
+            "Diccionari": "Dictionnaire",
+            "Teclat": "Afficher ou Masquer",
+            "Incorrecte": "Caractère non valide!",
+            "Repetida": "Lettre répétée!",
+            "Encertat": "Vous as raison!",
+            "Guanyat": "et vous avez gagné!",
+            "Fallat": "Vous avez échoué!",
+            "Perdut": "et vous avez perdu!",
+            "Descansi": "Repose en paix - RIP!",
+            "Puntuacio": "Score:"
+        }
+    ]
+    var Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == "ca");
+
 var lletres = [];
 var dolentes = ["_","_","_","_","_","_","_"];
 var vides = 7;
@@ -26,7 +166,7 @@ var pista = pistes[paraulespistes[aleatori]];
         
 //Marcar cada letra con un "_"
 
-for (var i = 0; i < paraules.length; i++) {
+for (var i = 0; i < paraula.length; i++) {
     lletres[i] = "_";}
 
         
@@ -57,14 +197,9 @@ for (var i = 0; i < paraules.length; i++) {
                 lletra = "u";
                 break;
             }
-            
-        
-            
-        
-          
+  
         var pos = paraula.indexOf(lletra);
-        if ((pos != -1) && (lletra !="")) {
-            // document.getElementById('miau').play();    
+        if ((pos != -1) && (lletra !="")) {    
             document.getElementById('miau').play();
             alert("Has encertat!"); 
             
@@ -74,36 +209,35 @@ for (var i = 0; i < paraules.length; i++) {
                 }
               }
               document.getElementById("lletres").innerHTML = lletres;
-            } 
-        else if (((lletra >= "a") && (lletra <= "z")) ||
+            
+            } else if (((lletra >= "a") && (lletra <= "z")) ||
                 (lletra == "ñ") || (lletra == "-") ||
                 (lletra == "ç") || (lletra == ".")) {
                  alert("Has fallat!");
                  document.getElementById('boom_cloud').play();
                  dolentes[7-vides] = lletra;
-                 document.getElementById("lletra").innerHTML = dolentes;
+                 document.getElementById("dolentes").innerHTML = dolentes;
                      
                     //Decrementam el comptador Vides
                     // vides = vides - 1;
                     vides--;
-       
                     MostraImg();
                 } else{
-                 window.alert(Idioma.Incorrecte);
+                 alert("Incorrecte");
         
-        document.getElementById("lletra").focus();
+        document.getElementById("valor").focus();
 
         // Actualitzam Vides a la pantalla.
-        document.getElementById("vides").innerHTML = 
+        document.getElementById("vida").innerHTML = 
                 "&nbsp;&nbsp;&nbsp;\n\
-                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vides;
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + vides;
             }
             
             
         //comprovar les vides per guanyar o perdre
         if (vides <=0) {
             document.getElementById('cat_fight').play();
-            window.alert("I has perdut!");
+            alert("I has perdut!");
             
           //  if (document.getElementById('off').hidden) { 
                 
@@ -112,8 +246,8 @@ for (var i = 0; i < paraules.length; i++) {
           
         } else {
             if (lletres.indexOf('_') == -1) {
-                AmagaImg();
-                document.getElementById("ahorcado").hidden = false;
+                // AmagaImg();
+                // document.getElementById("ahorcado").hidden = false;
                 
                 //calcular puntuació
                 /*Punts = paraula.length * Vides * 10 - document.getElementById("Segons").innerHTML;
@@ -121,18 +255,24 @@ for (var i = 0; i < paraules.length; i++) {
                 document.getElementById("Punts").innerHTML = Idioma.Puntuacio + " " + Punts;
                 */
             
-                window.alert("I has guanyat!");
-            if (document.getElementById('off').hidden) { 
-             document.getElementById("cheer").play();   
-            }
+                alert("I has guanyat!");
+            //  if (document.getElementById('off').hidden) { 
+              document.getElementById("cheer").play();   
+            // }
             AturaTot();
         } else {
-            if (document.getElementById('off').hidden) { 
+            //if (document.getElementById('off').hidden) { 
            document.getElementById("clock_ticking").play();     
-            }
+           // }
         }
     }
  }
+    function PISTES(){
+    
+    alert(pista);
+        
+    }
+    
     
         
     
