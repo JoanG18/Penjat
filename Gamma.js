@@ -138,6 +138,21 @@ const Idiomes_dft = [
             "Puntuacio": "Score:"
         }
     ]
+    
+// Simulam una Taula de ParaulesPistes, similar a la consulta a la base de dades, amb un array d'objectes
+const Taula_dft = [
+        // Deixam per defecte les paraules i pistes en Català
+        {"Paraula": "cordes", "Pista": "A ca un penjat, no hi anomenis cordes"},
+        {"Paraula": "fetge", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "forca", "Pista": "A la quinta forca"},
+        {"Paraula": "jutges", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "jutjat", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "mengen", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"},
+        {"Paraula": "penjat", "Pista": "A ca un penjat, no hi anomenis cordes"},
+        {"Paraula": "quinta", "Pista": "A la quinta forca"},
+        {"Paraula": "setze", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"}
+    ];
+    var Taula = Taula_dft
     var Idiomes = Idiomes_dft;
     var Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == "ca");
 
@@ -221,7 +236,7 @@ for (var i = 0; i < paraula.length; i++) {
                  document.getElementById("dolentes").innerHTML = dolentes;
                      
                     //Decrementam el comptador Vides
-                    // vides = vides - 1;
+                     vides = vides - 1;
                     vides--;
                     MostraImg();
                 } else{
@@ -369,10 +384,12 @@ for (var i = 0; i < paraula.length; i++) {
         document.getElemenbById("credits").innerHTML = Idioma.Comprovar;
         document.getElemenbById("pistes").innerHTML = Idioma.Comprovar;
         document.getElemenbById("comprovar").innerHTML = Idioma.Comprovar;
-       
+        
+          
     }
+        
     
-/* Funció per carregar la base de dades penjat.db
+   /* // Funció per carregar la base de dades penjat.db
     function AlaWeb_SQLite(IdIdioma) {
         // window.alert("AlaWeb_SQLite IdIdioma = '" + IdIdioma + "'");
         config = {
@@ -386,7 +403,7 @@ for (var i = 0; i < paraula.length; i++) {
         //    [], function(idiomes) {SQL_TblTextosGUI(IdIdioma, idiomes.pop());}
         );
   }  
-*/
+    */
   
     function SQL_TblTextosGUI(IdIdioma, TblTextosGUI){
         
@@ -398,7 +415,7 @@ for (var i = 0; i < paraula.length; i++) {
         };
     }
 
-   /* Print data  
+   // Print data  
     function Print_Data(res) {
         for (var i in res)
         {
@@ -411,5 +428,28 @@ for (var i = 0; i < paraula.length; i++) {
               window.alert("res[" + i + "][" +j + "] = " + res[i][j]);
              }
         }
-    } 
-*/
+    }
+
+    
+
+                                                
+    function SQL_TblParaulesPistes(IdIdioma, TblParaulesPistes){
+        
+        Taula = TblParaulesPistes;
+        if (Taula.length == 0){
+        window.alert("Idioma sense paraules / Idioma sin palabras / Language without words!");
+        Taula = Taula_dft;
+        IdIdioma = "ca";
+        IdIdioma_ant = Idioma;
+      } else{
+     };
+    }
+  /*
+     // Recuperam de la base de dades les paraules del IdIdioma
+    alasql('ATTACH SQLITE DATABASE penjat("db/penjat.db"); \n\ USE penjat; \n\
+            SELECT Paraula, Pista\n\
+            FROM TblParaules INNER JOIN TblPistes \n\
+            ON TblParaules.IdPista = TblPistes.IdPista \n\
+            WHERE TbParaules.IdIdioma = "'+ IdIdioma +'";',
+            [], function(taula) {SQL_TblParaulesPistes(IdIdioma, taula.pop());});
+      */ 
