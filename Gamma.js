@@ -152,6 +152,7 @@ const Taula_dft = [
         {"Paraula": "quinta", "Pista": "A la quinta forca"},
         {"Paraula": "setze", "Pista": "Setze jutges d'un jutjat mengen fetge d'un penjat"}
     ];
+    
     var Taula = Taula_dft
     var Idiomes = Idiomes_dft;
     var Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == "ca");
@@ -180,7 +181,9 @@ var paraula = paraules[aleatori];
 var pista = pistes[paraulespistes[aleatori]];
 
         //...
-        
+    aleatori = Math.floor(Math.random() * paraules.length);    
+    paraula = Taula[aleatori].Paraula   
+    pista = Taula[aleatori].Pista;
 //Marcar cada letra con un "_"
 
 for (var i = 0; i < paraula.length; i++) {
@@ -236,20 +239,18 @@ for (var i = 0; i < paraula.length; i++) {
                  document.getElementById("dolentes").innerHTML = dolentes;
                      
                     //Decrementam el comptador Vides
-                     vides = vides - 1;
+                    // vides = vides - 1;
                     vides--;
-                    MostraImg();
-                } else{
-                 alert("Incorrecte");
-        
-        document.getElementById("valor").focus();
-
         // Actualitzam Vides a la pantalla.
         document.getElementById("vida").innerHTML = 
                 "&nbsp;&nbsp;&nbsp;\n\
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + vides;
+                
+                    MostraImg();
+                } else{
+                 alert("Incorrecte");
             }
-            
+        document.getElementById("valor").focus();            
             
         //comprovar les vides per guanyar o perdre
         if (vides <=0) {
@@ -377,19 +378,19 @@ for (var i = 0; i < paraula.length; i++) {
         document.title = Idioma.Titol;
         document.getElemenbById("Versio").innerHTML = Idioma.Versio;
         document.getElemenbById("valor").placeholder = Idioma.Imput;
-        document.getElemenbById("idiomes").innerHTML = Idioma.Comprovar;
-        document.getElemenbById("text1").innerHTML = Idioma.Comprovar;
-        document.getElemenbById("text2").innerHTML = Idioma.Comprovar;
-        document.getElemenbById("text3").innerHTML = Idioma.Comprovar;
-        document.getElemenbById("credits").innerHTML = Idioma.Comprovar;
-        document.getElemenbById("pistes").innerHTML = Idioma.Comprovar;
-        document.getElemenbById("comprovar").innerHTML = Idioma.Comprovar;
+        document.getElemenbById("idiomes").innerHTML = Idioma.idiomes;
+        document.getElemenbById("text1").innerHTML = Idioma.text1;
+        document.getElemenbById("text2").innerHTML = Idioma.text2;
+        document.getElemenbById("text3").innerHTML = Idioma.text3;
+        document.getElemenbById("credits").innerHTML = Idioma.credits;
+        document.getElemenbById("pistes").innerHTML = Idioma.pistes;
+        document.getElemenbById("comprovar").innerHTML = Idioma.comprovar;
         
           
     }
         
     
-   /* // Funció per carregar la base de dades penjat.db
+    // Funció per carregar la base de dades penjat.db
     function AlaWeb_SQLite(IdIdioma) {
         // window.alert("AlaWeb_SQLite IdIdioma = '" + IdIdioma + "'");
         config = {
@@ -402,8 +403,16 @@ for (var i = 0; i < paraula.length; i++) {
             [], function(idiomes) {Print_Data(Idiomes = idiomes.pop());}
         //    [], function(idiomes) {SQL_TblTextosGUI(IdIdioma, idiomes.pop());}
         );
+
+        // Recuperam de la base de dades les paraules del IdIdioma
+    alasql('ATTACH SQLITE DATABASE penjat("db/penjat.db"); \n\ USE penjat; \n\
+            SELECT Paraula, Pista\n\
+            FROM TblParaules INNER JOIN TblPistes \n\
+            ON TblParaules.IdPista = TblPistes.IdPista \n\
+            WHERE TbParaules.IdIdioma = "'+ IdIdioma +'";',
+            [], function(taula) {SQL_TblParaulesPistes(IdIdioma, taula.pop());});
   }  
-    */
+    
   
     function SQL_TblTextosGUI(IdIdioma, TblTextosGUI){
         
@@ -442,14 +451,7 @@ for (var i = 0; i < paraula.length; i++) {
         IdIdioma = "ca";
         IdIdioma_ant = Idioma;
       } else{
+          
      };
     }
-  /*
-     // Recuperam de la base de dades les paraules del IdIdioma
-    alasql('ATTACH SQLITE DATABASE penjat("db/penjat.db"); \n\ USE penjat; \n\
-            SELECT Paraula, Pista\n\
-            FROM TblParaules INNER JOIN TblPistes \n\
-            ON TblParaules.IdPista = TblPistes.IdPista \n\
-            WHERE TbParaules.IdIdioma = "'+ IdIdioma +'";',
-            [], function(taula) {SQL_TblParaulesPistes(IdIdioma, taula.pop());});
-      */ 
+   
