@@ -1,0 +1,76 @@
+ <html>
+    <head>
+        <title>Prototip Joc Penjat</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Alpha.css">
+        <script src="Gamma_1.js"></script>
+        <script src="js/alasql.js"></script>
+        <script src='js/sql.js'></script>
+    </head>
+    
+<body onload="AmagaImg(); document.getElementById('mistery').play();" style="background-image: url('image/Jungle.png'); 
+      background-size: 640px 480px; background-repeat: no-repeat">
+
+            <h1 style="color: #FFFFFF" id="versio">GAMMA JOC PENJAT</h1>
+       
+            <input type="text" placeholder="Escriu en minuscules" id="valor">            
+           
+            <button onclick="comprova();" id="comprovar">comprova</button>
+            
+            <select name="Idiomes" id="Idiomes" onchange="CanviarIdioma(this.value)" title="Select">
+                <option value="ca">ca</option>
+                <option value="es">es</option>
+                <option value="fr">fr</option>
+                <option value="en">en</option>
+                <option value="de">de</option>
+                <option value="it">it</option>
+            </select>
+         
+            <h2 style="color: #C7C1D4" id="text1">Paraula</h2>
+        
+            <p id="lletres" style="color: #FFFFFF">_ _ _ _ _ _ _</p> 
+        
+            <h2 style="color: #C7C1D4" id="text2">Vides</h2>
+        
+            <p id="vida" style="color: #FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7</p>
+        
+            <h2 style="color: #C7C1D4" id="text3">Lletres fallades</h2>
+        
+            <p id="dolentes" style="color: #FFFFFF">_ _ _ _ _ _ _</p>
+            
+            <h4 style="color: #CCCCCC" id="credits">Crèdits: Joc del Penjat on Scratch</h4>
+            
+            <h2 id="counter">0</h2>
+            
+            <button onclick="PISTES();" id="pistes">pista</button>
+            
+            
+   <div id="audios">
+                
+         <audio id="mistery"><source src="audio/mystery.mp3" type="audio/mpeg"></audio>
+         <audio id="cheer"><source src="audio/cheer.mp3" type="audio/mpeg"></audio>
+         <audio id="clock_ticking"><source src="audio/clock_ticking.mp3" type="audio/mpeg"></audio>
+         <audio id="miau"><source src="audio/miau.mp3" type="audio/mpeg"></audio>
+         <audio id="cat_fight"><source src="audio/cat-fight.mp3" type="audio/mpeg"></audio>
+         <audio id="boom_cloud"> <source src="audio/boom_cloud.mp3" type="audio/mpeg"> </audio>
+         <audio id="bell_tollx3"><source src="audio/bell_toll_x3.mp3" type="audio/mpeg"> </audio>
+         <audio id="bell_toll"> <source src="audio/bell_toll.mp3" type="audio/mpeg"></audio>
+                
+    </div>
+                       
+    <div id="image"> 
+
+         <img src="image/ahorcado_6.png" id="ahorcado_6" style="width:280px;heitht:270px;" title="Et queden 6 vides!"> 
+         <img src="image/ahorcado_5.png" id="ahorcado_5" style="width:280px;heitht:270px;" title="Et queden 5 vides!"> 
+         <img src="image/ahorcado_4.png" id="ahorcado_4" style="width:280px;heitht:270px;" title="Et queden 4 vides!"> 
+         <img src="image/ahorcado_3.png" id="ahorcado_3" style="width:280px;heitht:270px;" title="Et queden 3 vides!"> 
+         <img src="image/ahorcado_2.png" id="ahorcado_2" style="width:280px;heitht:270px;" title="Et queden 2 vides!"> 
+         <img src="image/ahorcado_1.png" id="ahorcado_1" style="width:280px;heitht:270px;" title="Et queda 1 vida!"> 
+         <img src="image/ahorcado_0.png" id="ahorcado_0" style="width:280px;heitht:270px;" title="En pau descansi">       
+            
+    </div>   
+            
+        </body>
+</html> 
+
