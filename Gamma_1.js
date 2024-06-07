@@ -407,8 +407,8 @@ for (var i = 0; i < paraula.length; i++) {
                 FROM TblParaules INNER JOIN TblPistes \n\
                   ON TblParaules.IdPista = TblPistes.IdPista \n\
                 WHERE TblParaules.IdIdioma = "' + IdIdioma + '";',
-            [], function(taula) {Print_Data(Idiomes = taula.pop());}
-        //    [], function(taula) {SQL_TblParaulesPistes(IdIdioma, taula.pop());}
+        //    [], function(taula) {Print_Data(Idiomes = taula.pop());}
+            [], function(taula) {SQL_TblParaulesPistes(IdIdioma, taula.pop());}
         );
   }  
  
