@@ -2,7 +2,7 @@ const Idiomes_dft = [
         {
             "IdIdioma": "ca",
             "Titol": "Versió amb Estructures de Dades Joc del Penjat",
-            "Versio": "Versió β Joc del Penjat",
+            "Versio": "Versió γ Joc del Penjat",
             "Input": "Escriu una lletra minúscula",
             "Pregunta": "Anam a la quinta forca?",
             "Comprovar": "Comprovar",
@@ -36,7 +36,7 @@ const Idiomes_dft = [
         {
             "IdIdioma": "es",
             "Titol": "Versión con Estructuras de Datos Juego del Ahorcado",
-            "Versio": "Versión β Juego del Ahorcado",
+            "Versio": "Versión γ Juego del Ahorcado",
             "Input": "Escribe una letra minúscula",
             "Pregunta": "Vamos al quinto pino?",
             "Comprovar": "Comprobar",
@@ -70,7 +70,7 @@ const Idiomes_dft = [
         {
             "IdIdioma": "en",
             "Titol": "Hangman Game Data Structures Version",
-            "Versio": "Hangman Game β Version",
+            "Versio": "Hangman Game γ Version",
             "Input": "Write a lowercase letter",
             "Pregunta": "Are we going to the boondocks?",
             "Comprovar": "Check it",
@@ -374,16 +374,14 @@ for (var i = 0; i < paraula.length; i++) {
         Idioma = Idiomes.find(Idioma => Idioma.IdIdioma == IdIdioma);
        
         document.title = Idioma.Titol;
-        document.getElemenbById("versio").innerHTML = Idioma.versio;
-        document.getElemenbById("valor").placeholder = Idioma.Imput;
-        document.getElemenbById("idiomes").innerHTML = Idioma.idiomes;
-        document.getElemenbById("text1").innerHTML = Idioma.text1;
-        document.getElemenbById("text2").innerHTML = Idioma.text2;
-        document.getElemenbById("text3").innerHTML = Idioma.text3;
-        document.getElemenbById("credits").innerHTML = Idioma.credits;
-        document.getElemenbById("pistes").innerHTML = Idioma.pistes;
-        document.getElemenbById("comprovar").innerHTML = Idioma.comprovar;
-       
+        document.getElementById("versio").innerHTML = Idioma.Versio;
+        document.getElementById("valor").placeholder = Idioma.Input;
+        document.getElementById("text1").innerHTML = Idioma.Paraula;
+        document.getElementById("text2").innerHTML = Idioma.Vides;
+        document.getElementById("text3").innerHTML = Idioma.Incorrecte;
+        document.getElementById("pistes").innerHTML = Idioma.Pista;
+        document.getElementById("comprovar").innerHTML = Idioma.Comprovar;
+        
          
     }
        
