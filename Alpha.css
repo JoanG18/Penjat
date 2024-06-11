@@ -31,7 +31,7 @@ h2{
     color: white;
 }
 
-#Idiomes { position:relative; top:-10px; left:110px; }
+#Idiomes { position:relative; top:10px; left:110px; }
 imatgeidioma { position:relative; top:-400px; left:420px; }
 #Idioma { position:relative; top:-386px; left:318px; }
 #Sons { position:relative; top:-380px; left:558px; }
@@ -44,6 +44,6 @@ imatgeidioma { position:relative; top:-400px; left:420px; }
 #Teclat { position:relative; top:-360px; left:293px; }
 #Audios { position:relative; top:-480px; left:0px; }
 #image { position:relative; top:-350px; left:300px; }
-#Idiom { position:relative; top:-410px; left:270px; }
-#Idiom2 { position:relative; top:-440px; left:410px; }
+#Idiom { position:relative; top:-410px; left:300px; }
+#Idiom2 { position:relative; top:-434px; left:410px; }
 
